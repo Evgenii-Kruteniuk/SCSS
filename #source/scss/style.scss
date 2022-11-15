@@ -1,27 +1,33 @@
+// 1.Создаем комментарии которые видно только в SCSS с помощью //
+// 2.Импорт других файлов
 @import "nullstyle.scss";
 
-/*Задаем переменную rm*/
+// 3.Создание переменных
 $rm: 40px;
 
-/*Создаем шаблон*/
+// 4.Создание шаблонов
 %zaborder {
   border: 5px dashed red;
 }
 
-/*Подключаем миксины*/
+// 5.Подключаем миксины
 @mixin abc($f, $t, $c) {
   font-size: $f;
   text-align: $t;
   color: $c;
 }
 
-/*Тренируемся со вложенностью*/
 .block {
+  // 7. Используем встроенную ф-ю калькулятор
+  width: 550px / 1050px * 100%;
+  background-color: rgb(181, 181, 181);
+  margin: 0 auto;
   line-height: 100px;
   text-align: center;
   padding: $rm;
   font-size: 70px;
   font-weight: 300;
+  // 6.Тренируемся со вложенностью
   > p {
     color: green;
   }
@@ -35,7 +41,7 @@ $rm: 40px;
   }
 }
 
-/*Тренируемся с заменой родительского элемента - &*/
+// 8.Тренируемся с заменой родительского элемента - &
 .link {
   color: blue;
   text-decoration: underline;
