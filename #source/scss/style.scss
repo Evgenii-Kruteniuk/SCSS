@@ -1,0 +1,50 @@
+@import "nullstyle.scss";
+
+/*Задаем переменную rm*/
+$rm: 40px;
+
+/*Создаем шаблон*/
+%zaborder {
+  border: 5px dashed red;
+}
+
+/*Подключаем миксины*/
+@mixin abc($f, $t, $c) {
+  font-size: $f;
+  text-align: $t;
+  color: $c;
+}
+
+/*Тренируемся со вложенностью*/
+.block {
+  line-height: 100px;
+  text-align: center;
+  padding: $rm;
+  font-size: 70px;
+  font-weight: 300;
+  > p {
+    color: green;
+  }
+  .block_text {
+    font-size: $rm;
+    line-height: 50px;
+    @extend %zaborder;
+    span {
+      color: red;
+    }
+  }
+}
+
+/*Тренируемся с заменой родительского элемента - &*/
+.link {
+  color: blue;
+  text-decoration: underline;
+  &:hover {
+    color: rgb(246, 5, 246);
+    @extend %zaborder;
+  }
+}
+
+.new {
+  @include abc(100px, center, red);
+}
